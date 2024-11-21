@@ -1,3 +1,4 @@
+const myHeros = ["Spiderman", "Deadpool"]
 const myArr = [1,2,3,6,4,5]
 
 //console.log(myHeros.length); //length
@@ -39,4 +40,4 @@ const myn2 = myArr.splice(1,3); // splice( x = pos where to start , total no of 
 console.log("C ",myArr);
 console.log("Splice: ", myn2);
 
-//splice manipulate original array
+console.log(myArr);
