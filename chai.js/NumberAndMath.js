@@ -27,6 +27,6 @@ const fromRange = 10
 const toRange = 20
 
 console.log(Math.floor(Math.random() * (toRange - fromRange + 1)) + fromRange);
-console.log(Date.UTC.prototype);
+
 
 
