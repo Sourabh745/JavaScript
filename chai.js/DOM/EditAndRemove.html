@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove Element in DOM</title>
+</head>
+<body style="background-color: rgb(47, 45, 45); color: #fff;">
+    <ul class="language">
+        <li>HTML</li>
+        
+    </ul>
+</body>
+<script>
+    //in this method whenever the new element added it traverse from starting to end
+    function addLang(langName) {
+        const list = document.createElement('li');
+        list.innerHTML = `${langName}`
+        const ul = document.querySelector('.language').appendChild(list)
+    }
+    addLang("CSS")
+    addLang("Javascript")
+
+    //optimization way
+    function addOptiLanguage(langName){
+        const list = document.createElement('li');
+        list.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(list)
+    }
+    addOptiLanguage("Java")
+
+//============EDIT===============
+    const secondLang = document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML = "jojo"
+    const newLine = document.createElement('li')
+    newLine.textContent = "jojo"
+    secondLang.replaceWith(newLine) // replaceWith is to replace new one to older
+
+//=======replace=============
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>GOLANG</li>'
+
+    //====== remove=======
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
