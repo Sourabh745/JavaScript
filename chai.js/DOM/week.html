@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekends</title>
+</head>
+
+<body style="background-color: rgb(47, 46, 46); color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const res = document.querySelector('.parent');
+    console.log(res);
+    console.log(res.children);
+    console.log(res.children[2].innerHTML);
+
+    for (let index = 0; index < res.children.length; index++) {
+        console.log(res.children[index].innerHTML);
+    }
+
+    res.children[1].style.color = 'lime';
+    //console.log(res.firstElementChild);
+    //console.log(res.lastElementChild);
+    console.log("===========================");
+
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne); // return first element 
+    console.log(dayOne.parentElement); // return parent div of this class
+    console.log(dayOne.nextElementSibling); // next element 
+
+   
+    console.log("NODES: ", res.childNodes); 
+    /* NODES:
+    NodeList(9)[text, div.day, text, div.day, text, div.day, text, div.day, text]
+    0:text
+    1:div.day
+    2:text
+    3:div.day
+    4:text
+    5:div.day
+    6:text
+    7:div.day
+    8:text
+    length:9
+    [[Prototype]] : NodeList 
+    */
+
+</script>
+
+</html>

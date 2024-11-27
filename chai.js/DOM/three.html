@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nodelist</title>
+</head>
+<body style="background-color: rgb(47, 46, 46); color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random()* 10+1)
+    div.setAttribute("title","generated title") // its just override the value unlike first retrieve then change it is the ony case that why we use setAttribute
+    div.style.backgroundColor = 'lime'
+    div.style.padding = "12px"
+    //div.innerText = "sourabh"
+    const text = document.createTextNode('Hello baby!!')
+    div.appendChild(text)
+
+    document.body.appendChild(div)
+
+</script>
+</html>

@@ -8,3 +8,8 @@ const newNum = myNum
 
 console.log(newNum);
 //OUTPUT: [ 51, 61, 71, 81, 91, 101 ]
+
+myNum.forEach(element => {
+    console.log(element);
+    
+});

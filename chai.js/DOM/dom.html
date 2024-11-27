@@ -12,8 +12,43 @@
 </head>
 <body class="bg-black">
     <div>
-        <h1 id = "title" class ="heading">DOM learning </h1>
+        <h1 id = "title" class ="heading">DOM learning <span style="display: none"> TESTING </span> </h1>
+        <h2>lorem ipsum dolor sit.</h2>
+        <h2>lorem ipsum dolor sit.</h2>
+        <h2>lorem ipsum dolor sit.</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eligendi deserunt architecto cumque non. Fugiat quod perferendis, iusto similique ab eos doloribus beatae nisi quasi harum enim accusamus quos quia. </p>
+
+        <input type="password" name="uername" id="">
+
     </div>
 </body>
 </html>
+
+<!-- 
+tempList
+VM1443:1 Uncaught ReferenceError: tempList is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1443:1Understand this errorAI
+tempList[0].style.color = "orange"
+VM1449:1 Uncaught ReferenceError: tempList is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1449:1Understand this errorAI
+const tempList = document.querySelectorAll('h2')
+undefined
+tempList.forEach(function (h) {
+    h.style.backgroundColor = 'green' 
+})
+undefined
+texmpList.forEach(function (h) {
+    h.style.backgroundColor = 'transparent' 
+})
+undefined
+Array.from(tempList)
+(3) [h2, h2, h2]0: h21: h22: h2length: 3[[Prototype]]: Array(0)
+const myConvertedArray = Array.from(tempList)
+
+undefined
+myConvertedArray.forEach( function (e){
+   e.style.color = 'red' 
+} )
+undefined -->
