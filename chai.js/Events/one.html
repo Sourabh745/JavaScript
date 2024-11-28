@@ -7,15 +7,15 @@
     <title>HTML Events</title>
 </head>
 
-<body style="background-color: rgb(40, 39, 37); color: #0f8378;">
+<body style="background-color: rgb(40, 39, 37); color: #f5fbfa;">
     <h2>Amazing Images</h2>
     <div id="body">
         <ul id="images">
             <li><img width="200px" id="leaves" src="rebuilding.png" alt="photoshop"></li>
             <li><img width="200px" id="deadpool1" src="minimalist-deadpool-wallpaper.jpg" alt=""></li>
-            <li><img width="200px" id="deadpool2" src="images(2).jpg" alt=""  onclick="alert('owl')" ></li>
+            <li><img width="200px" id="deadpool2" src="images(2).jpg" alt=""  ></li><!-- onclick="alert('owl')" -->
             <li><img width="200px" src="images(3).jpg" alt=""></li>
-            <li><a href="https://www.google.com">Google</a></li>
+            <li><a id="google" href="https://www.google.com">Google</a></li>
         </ul>
     </div>
 </body>
@@ -26,18 +26,53 @@
     // }
 
     //best approach
-    document.getElementById('deadpool2').addEventListener('click', function(){
-        alert("Best Approach")
-    },false)//default its false so you write it or not
+    // document.getElementById('deadpool2').addEventListener('click', function(){
+    //     //alert("Best Approach")
+    // },false)//default its false so you write it or not
 
-    //old version of addEventListner
-    //attachEvent() it more in use in internet explorer era
-    //JQuery - on it is eventListner
+    // //old version of addEventListner
+    // //attachEvent() it more in use in internet explorer era
+    // //JQuery - on it is eventListner
 
-    document.getElementById('body').addEventListener('click', function(e){
-        console.log(e.timeStamp());
-        
-    })
+    // document.getElementById('body').addEventListener('click', function(e){
+    //     //console.log(`${e.clientX},${e.clientY}`); // return x and y position whenever mouse click 
+    //     //console.log(e.layerX);
+    //     //console.log(e.timeStamp.toString());// return timestamp when click 
+    // })
+
+    // //type, timestamp, defaultPrevented you used in react project to prevent refresh when form is submiting
+    // //target, toElement, srcElement , currentTarget
+    // // clientX, clientY, offsetX offsetY, screenX, screenY
+    // // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("click inside the ul");
+    // },false )
+    // document.getElementById('deadpool1').addEventListener('click', function(e){
+    //     console.log("click inside the deadpool image in number 3");
+    //     e.stopPropagation() // stop it execution here
+    // },false )
+    // // false stands for eventBubbling // islie  bubble hoke uper jaega aur phele ise print krega
+    // //true stands for eventCapturing
+    // //true,false case : click true one in print when click false one first print outer nested that is true then innernested false one print
+
+    // //preventing refresh page
+    const google = document.getElementById('google');
+     google.addEventListener('click', function(e){
+        e.preventDefault()
+     })
+
+    const image = document.querySelector('#images').addEventListener(
+        'click',function(e){
+            console.log(e.target.tagName);//return target code like image code or list
+            if(e.target.tagName === 'img'){
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+        }
+        //removeIt.parentNode.removeChild(removeIt )
+    ,false)
+
 </script>
 
 </html>
