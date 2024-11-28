@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: rgb(40, 39, 37); color: #0f8378;">
+    <h2>Amazing Images</h2>
+    <div id="body">
+        <ul id="images">
+            <li><img width="200px" id="leaves" src="rebuilding.png" alt="photoshop"></li>
+            <li><img width="200px" id="deadpool1" src="minimalist-deadpool-wallpaper.jpg" alt=""></li>
+            <li><img width="200px" id="deadpool2" src="images(2).jpg" alt=""  onclick="alert('owl')" ></li>
+            <li><img width="200px" src="images(3).jpg" alt=""></li>
+            <li><a href="https://www.google.com">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById('deadpool1').onclick = function(){
+    //     alert("Click me! Click me!")
+    // }
+
+    //best approach
+    document.getElementById('deadpool2').addEventListener('click', function(){
+        alert("Best Approach")
+    },false)//default its false so you write it or not
+
+    //old version of addEventListner
+    //attachEvent() it more in use in internet explorer era
+    //JQuery - on it is eventListner
+
+    document.getElementById('body').addEventListener('click', function(e){
+        console.log(e.timeStamp());
+        
+    })
+</script>
+
+</html>
