@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check keys</title>
+</head>
+<body style="background-color: rgb(25, 21, 21); color: aliceblue; padding:30%">
+    <div class="project">
+        <div id="insert">
+            <div style="padding:30%;" class="key">Print the keyboard keys that we press</div>
+
+        </div>
+    </div>
+  
+</body>
+<script>
+    const insert = document.getElementById('insert')
+    window.addEventListener('keydown', (e) => {
+        insert.innerHTML = `
+        <div class = "color">
+              <table>
+        <tr>
+            <th>Key</th>
+            <th>KeyCode</th>
+            <th>Code</th>
+        </tr>
+        <tr>
+            <td>${e.key}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        </tr>
+       
+    </table>
+        </div>
+        `
+    })
+</script>
+</html>
