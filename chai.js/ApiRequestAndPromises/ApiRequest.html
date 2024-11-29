@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+</head>
+<body>
+     <div class="container">
+        <div class="image"></div>
+        <div class="follower">Followers : </div>
+     </div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    //console.log( xhr.readyState);
+    xhr.open('GET',requestUrl) // state : 0 , just create a request
+
+    xhr.onreadystatechange = function(){
+        console.log( xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            //console.log(typeof data);
+            //console.log(data);
+            const getImage = data.avatar_url;
+            const getFollower = data.followers;            
+            
+            const imageElement = document.createElement('img')
+            imageElement.src = getImage
+            imageElement.height = 200
+            imageElement.width = 200
+            imageElement.alt = "Hitesh Choudhary"
+            document.querySelector('.image').appendChild(imageElement)
+            
+            console.log(getFollower);
+            const followElement = document.createElement('span')
+            followElement.textContent = getFollower
+            document.querySelector('.follower').appendChild(followElement)
+        }
+    }
+    xhr.send()//state : 1 , now its calling
+
+</script>
+</html>

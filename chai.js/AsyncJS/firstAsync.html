@@ -17,7 +17,12 @@
         document.querySelector('h1').innerHTML = "Async"
     }
     //setTimeout
-    setTimeout(sayName, 2000);//
+    console.log("before sourabh"); // first print
+    
+    setTimeout(sayName, 1000);// third print
+
+    console.log("after sourabh"); // second print
+    
     const changeMe = setTimeout(changeText, 3000);// change after 3 seconds
 
     //clearTimeout take reference like sayName that hold  a function

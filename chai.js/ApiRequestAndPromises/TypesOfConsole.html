@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    console.log("Hello")
+    //info
+    console.info("This is information")
+
+    //warn
+    console.warn("This is my warning");
+
+    //Error
+    console.error("Error!!");
+
+    //Assert failed error
+    console.assert(2 + 2 === 5, "Math is broken!"); // Outputs the message since the condition is false.
+
+    //Trace
+    function a() { b(); }
+    function b() { console.trace("Trace example"); }
+    a();
+
+    //Group
+    console.group("Group Example");
+    console.log("Inside the group");
+    console.groupEnd();
+
+    //Table
+    const users = [{ name: "Alice", age: 25 }, { name: "Bob", age: 30 }];
+    console.table(users);
+
+    //time
+    console.time("Timer");
+    // Perform some operations
+    console.timeEnd("Timer");
+
+    //console.count(): Logs the number of times it's called with the same label.
+    console.count("Count Example");
+    console.count("Count Example");
+
+    //console.countReset(): Resets the count for a given label.
+    console.countReset("Count Example");
+
+    //console.dir(): Displays an interactive listing of properties of a specified object.
+    console.dir(document.body);
+
+    //Debugging
+    console.debug("Debugging...");
+
+
+
+
+</script>
+
+</html>
