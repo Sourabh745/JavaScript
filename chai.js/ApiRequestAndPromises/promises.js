@@ -105,3 +105,8 @@ async function consumePromiseSix(){
     
 }
 consumePromiseSix()
+
+//in case of fetch() have private field is called data and that data have two private arrays
+// OnFulfilled[](Resolve) AND onRejection[](Reject) and these two have function
+// fetch request goes to web browser/ native nodes then it request network if request is not goes to network then it cause rejection 
+// if request is connect to network and cause http error they are still in RESOLVE array like 404,401
