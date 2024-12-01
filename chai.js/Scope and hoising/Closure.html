@@ -1,0 +1,36 @@
+<!-- Use case scenario Example if asked in interview   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+    // above one is when you just need 2-3 color but not in 50s - 100s color
+
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+        // here its returning color that is in the lexical scope
+    }
+// onclick wants function not its execution
+    document.getElementById("orange").onclick = clickHandler('orange')
+    document.getElementById("green").onclick = clickHandler('green')
+
+    
+
+</script>
+</html>
